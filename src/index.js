@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Clase from "./Clase";
-import Funciones from "./Funciones";
-import HolaMundo from "./HolaMundo";
+import Contacto from "./Componentes/Contacto";
+import Perfil from "./Componentes/Perfil";
 
 /*
 const elemento = document.createElement("h1");
@@ -13,10 +12,17 @@ contenedor.appendChild(elemento);
 
 // (que , donde )
 ReactDOM.render(
-  <p>
-    <HolaMundo />
-    <Funciones />
-    <Clase/>
-  </p>,
+  <React.StrictMode>
+    <Contacto nombreContacto="Octavio Robleto" />
+    <Contacto nombreContacto="Mariano Guerrero" />
+    <Contacto nombreContacto="Miriam Figueroa" />
+
+    <Perfil nombrePerfil="Octavio Robleto" cargo="Docente" titulo="Ingeniero" />
+    <Perfil
+      nombrePerfil="Carla Perez"
+      cargo="Moderadora"
+      titulo="Administrativo"
+    />
+  </React.StrictMode>,
   document.getElementById("root")
 );
