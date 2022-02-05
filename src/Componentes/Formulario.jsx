@@ -10,10 +10,10 @@ export default class Formulario extends Component {
         }
     }
 
-    AsignarValores1 = (propiedad, valor) => {
-        let estado = {};
-        estado[propiedad] = valor;
-        this.setState(estado);
+    AsignarValoresFormulario = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     }
 
     render() {
@@ -25,7 +25,7 @@ export default class Formulario extends Component {
                     name="nombre"
                     placeholder="Nombre"
                     value={this.state.nombre}
-                    onChange={(evento) => this.AsignarValores1("nombre",evento.target.value)}
+                    onChange={this.AsignarValoresFormulario}
                 />
                 <input
                     type="email"
@@ -33,7 +33,7 @@ export default class Formulario extends Component {
                     name="correo"
                     placeholder="correo"
                     value={this.state.correo}
-                    onChange={(evento) => this.AsignarValores1("correo",evento.target.value)}
+                    onChange={this.AsignarValoresFormulario}
                 />
 
                 <button>Enviar Formulario</button>
