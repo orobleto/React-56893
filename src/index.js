@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from './App';
+import Formulario from "./Componentes/Formulario";
 
 /*
 const elemento = document.createElement("h1");
@@ -12,7 +13,9 @@ contenedor.appendChild(elemento);
 // (que , donde )
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+
+  <Formulario></Formulario>
+    
   </React.StrictMode>,
   document.getElementById("root")
 );
