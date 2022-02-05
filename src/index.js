@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Contacto from "./Componentes/Contacto";
-import Perfil from "./Componentes/Perfil";
+import App from './App';
 
 /*
 const elemento = document.createElement("h1");
@@ -13,16 +12,7 @@ contenedor.appendChild(elemento);
 // (que , donde )
 ReactDOM.render(
   <React.StrictMode>
-    <Contacto nombreContacto="Octavio Robleto" />
-    <Contacto nombreContacto="Mariano Guerrero" />
-    <Contacto nombreContacto="Miriam Figueroa" />
-
-    <Perfil nombrePerfil="Octavio Robleto" cargo="Docente" titulo="Ingeniero" />
-    <Perfil
-      nombrePerfil="Carla Perez"
-      cargo="Moderadora"
-      titulo="Administrativo"
-    />
+    <App/>
   </React.StrictMode>,
   document.getElementById("root")
 );
