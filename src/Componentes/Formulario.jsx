@@ -9,7 +9,12 @@ export default class Formulario extends Component {
             correo: ""
         }
     }
-    
+
+    AsignarValores1 = (propiedad, valor) => {
+        let estado = {};
+        estado[propiedad] = valor;
+        this.setState(estado);
+    }
 
     render() {
         return (<div>
@@ -20,7 +25,7 @@ export default class Formulario extends Component {
                     name="nombre"
                     placeholder="Nombre"
                     value={this.state.nombre}
-                    onChange={(evento) => this.setState({ nombre: evento.target.value })}
+                    onChange={(evento) => this.AsignarValores1("nombre",evento.target.value)}
                 />
                 <input
                     type="email"
@@ -28,7 +33,7 @@ export default class Formulario extends Component {
                     name="correo"
                     placeholder="correo"
                     value={this.state.correo}
-                    onChange={(evento) => this.setState({ correo: evento.target.value })}
+                    onChange={(evento) => this.AsignarValores1("correo",evento.target.value)}
                 />
 
                 <button>Enviar Formulario</button>
