@@ -14,11 +14,25 @@ export default class Formulario extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
+        
+    }
+
+    EnviarFormulario = (event) => {
+        event.preventDefault();
+        console.log(this.state);
+        this.LimpiarValoresFormulario();
+    }
+
+    LimpiarValoresFormulario = () => {
+        this.setState({
+            nombre: "",
+            correo: ""
+        });
     }
 
     render() {
         return (<div>
-            <form>
+            <form onSubmit={this.EnviarFormulario}>
                 <input
                     type="text"
                     id="nombre"
@@ -26,6 +40,7 @@ export default class Formulario extends Component {
                     placeholder="Nombre"
                     value={this.state.nombre}
                     onChange={this.AsignarValoresFormulario}
+                    required={true}
                 />
                 <input
                     type="email"
@@ -34,10 +49,11 @@ export default class Formulario extends Component {
                     placeholder="correo"
                     value={this.state.correo}
                     onChange={this.AsignarValoresFormulario}
+                    required={true}
                 />
 
-                <button>Enviar Formulario</button>
-                <button>Limpiar Formulario</button>
+                <button type="submit">Enviar Formulario</button>
+                <button type="reset" onClick={this.LimpiarValoresFormulario}>Limpiar Formulario</button>
 
             </form>
         </div>);
